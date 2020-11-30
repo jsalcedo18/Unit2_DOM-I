@@ -112,27 +112,48 @@ const navLinksArray = Array.from(navLinks);
   const circleLogo = document.getElementById("cta-img");
   circleLogo.setAttribute('src', 'img/header-img.png');
   circleLogo.alt = 'Circle Image of Code'; //changing the text of the alt property
-  console.log(circleLogo);
+  // console.log(circleLogo);
 
 //Section Class main-content---------------------------------------------------------------
+const allH4s = document.querySelectorAll('.main-content h4');
+// console.log(allH4s);
 
+const allH4sArray = Array.from(allH4s);
+// console.log(allH4sArray);
+//----------------------
+const allPs = document.querySelectorAll('.main-content p');
+// console.log(allPs);
+
+const allPsArray = Array.from(allPs);
+// console.log(allPsArray);
 //--------------------------------------------
   //Task: top-content- h4 + p of Features
+  allH4s[0].textContent = 'Features';
+  allPs[0].textContent = siteContent['main-content']['features-content'];
 
 //--------------------------------------------
   //Task: top-content- h4 + p of About
-
+  allH4s[1].textContent = 'About';
+  allPs[1].textContent = siteContent['main-content']['about-content'];
 //--------------------------------------------
   //Task: img src
-
+  const codeBox = document.getElementById("middle-img");
+  // codeBox.setAttribute('src', 'img/mid-page-accent.jpg');
+  codeBox.setAttribute('src', siteContent['main-content']['middle-img-src']);
 //--------------------------------------------
   //Task: bottom-content- h4 + p of Services
+  allH4s[2].textContent = 'Services';
+  allPs[2].textContent = siteContent['main-content']['services-content'];
 
 //--------------------------------------------
   //Task: bottom-content- h4 + p of Product
+  allH4s[3].textContent = 'Product';
+  allPs[3].textContent = siteContent['main-content']['product-content'];
 
 //--------------------------------------------
   //Task: bottom-content- h4 + p of Vision
+  allH4s[4].textContent = 'Vision';
+  allPs[4].textContent = siteContent['main-content']['vision-content'];
 
 //Section Class contact-------------------------------------------------------------------
 
