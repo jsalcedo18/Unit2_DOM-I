@@ -40,3 +40,53 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//Header Section------------------------------------------
+
+  //Task: Add "Services" to nav a 1
+
+  //Task: Add "Product" to nav a 2
+
+  //Task: Add "Vision" to nav a 3
+
+  //Task: Add "Features" to nav a 4
+
+  //Task: Add "About" to nav a 5
+
+  //Task: Add "Contact" to nav a 6
+
+//Section Class cta---------------------------------------
+
+  //Task: Add DOM <br> Is <br> Awesome to <h1>
+
+  //Task: Add "Get Started" to Button
+
+  //Task: Add img src
+
+//Section Class main-content------------------------------
+
+  //Task: top-content- h4 + p of Features
+
+  //Task: top-content- h4 + p of About
+
+  //Task: img src
+
+  //Task: bottom-content- h4 + p of Services
+
+  //Task: bottom-content- h4 + p of Product
+
+  //Task: bottom-content- h4 + p of Vision
+
+//Section Class contact------------------------------
+
+  //Task: h4 "Contact"
+
+  //Task: p "123 Way 456 Street<br>Somewhere, USA"
+
+  //Task: p "1 (888) 888-8888"
+
+  //Task: p "sales@greatidea.io"
+
+//Footer---------------------------------------------
+
+  //Task: p "Copyright Great Idea! 2018"
