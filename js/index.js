@@ -1,4 +1,4 @@
-const siteContent = {
+const siteContent = { 
   "nav": {
     "nav-item-1": "Services",
     "nav-item-2": "Product",
