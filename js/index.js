@@ -39,7 +39,13 @@ const siteContent = {
 //--------------------------------------------------------------------------------------------
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+// logo.setAttribute('src', siteContent["nav"]["img-src"]) //When given an object bc currently, thats the location
+/*OR*/
+  // logo.setAttribute('src', 'img/logo.png')
+//Notes:
+//if a property is a string with spaces or dashes (like img-src) then you have to use bracket notation 
+//to refer to it. You could do the same thing like this: 
+logo.setAttribute('src', siteContent.nav['img-src'])
 
 
 //Header Section-----------------------------------------------------------------------------
@@ -81,17 +87,32 @@ const navLinksArray = Array.from(navLinks);
   //Task: Add "Contact" to nav a 6
   const navContact = navAbout.nextElementSibling;
   navContact.textContent = 'Contact';
-  
+
 //Section Class cta-------------------------------------------------------------------------
 
 //--------------------------------------------
   //Task: Add DOM <br> Is <br> Awesome to <h1>
+    // const cta = document.querySelector('.cta')
+    // const ctaH1 = cta.querySelector('h1')
+    // ctaH1.innerText = siteContent.cta.h1.split(' ').join('\n');  //cant use .textContent bc you want to look more specific (.innerText)
+    /*OR*/
+    const header = document.querySelector('.cta h1');
+    header.innerText = siteContent.cta.h1.split(' ').join('\n'); //can't use <br> bc thats a HTML tag
+    //siteContent is where the wanted sentence is located, so your splitting each work into its own string, then join the strings w/ \n inbetween
+    console.log(header);
 
 //--------------------------------------------
   //Task: Add "Get Started" to Button
-
+  const getStartedButton = document.querySelector('.cta button');
+  getStartedButton.textContent = 'Get Started';
+  // console.log(getStartedButton);
+  
 //--------------------------------------------
   //Task: Add img src
+  const circleLogo = document.getElementById("cta-img");
+  circleLogo.setAttribute('src', 'img/header-img.png');
+  circleLogo.alt = 'Circle Image of Code'; //changing the text of the alt property
+  console.log(circleLogo);
 
 //Section Class main-content---------------------------------------------------------------
 
