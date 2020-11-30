@@ -159,16 +159,37 @@ const allPsArray = Array.from(allPs);
 
 //--------------------------------------------
   //Task: h4 "Contact"
+  const contact = document.querySelector('.contact h4');
+  contact.textContent = 'Contact';
 
 //--------------------------------------------
   //Task: p "123 Way 456 Street<br>Somewhere, USA"
-
+  const streetAddress = contact.nextElementSibling;
+  console.log(streetAddress);
+      //Long Way...
+      // const street = (`${'123 Way 456 Street Somewhere, USA'}`).split(' ');
+      // const addressPt1 = street.slice(0, 4).join(' ');
+      // console.log(addressPt1);
+      // const addressPt2 = street.slice(4, 6).join(' ');
+      // console.log(addressPt2);
+      //   const addressAll = `${addressPt1} ${'\n'} ${addressPt2}`;
+      //   console.log(addressAll);
+      //Short Way...
+      const addressAll = `${'123 Way 456 Street'} ${' \n '} ${'Somewhere, USA'}`;
+      console.log(addressAll);
+  streetAddress.innerText = addressAll;
 //--------------------------------------------
   //Task: p "1 (888) 888-8888"
+  const phoneNumber = streetAddress.nextElementSibling;
+  phoneNumber.textContent = '1 (888) 888-8888';
 
 //--------------------------------------------
   //Task: p "sales@greatidea.io"
+  const email = phoneNumber.nextElementSibling;
+  email.textContent = 'sales@greatidea.io';
 
 //Footer---------------------------------------------
 
   //Task: p "Copyright Great Idea! 2018"
+  const copyRight = document.querySelector('footer p');
+  copyRight.textContent = 'Copyright Great Idea! 2018';
