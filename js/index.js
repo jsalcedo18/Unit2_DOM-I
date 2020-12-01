@@ -188,8 +188,19 @@ const allPsArray = Array.from(allPs);
   const email = phoneNumber.nextElementSibling;
   email.textContent = 'sales@greatidea.io';
 
-//Footer---------------------------------------------
+//Footer-------------------------------------------------------------------------------
 
   //Task: p "Copyright Great Idea! 2018"
   const copyRight = document.querySelector('footer p');
   copyRight.textContent = 'Copyright Great Idea! 2018';
+
+//Additonal-------------------------------------------------------------------------------
+  // Change the color of the navigation text to be green.
+  navService.style.color = 'green';
+  navProduct.style.color = 'green';
+  navVision.style.color = 'green';
+  navFeatures.style.color = 'green';
+  navAbout.style.color = 'green';
+  navContact.style.color = 'green';
+  
+  // Utilize .appendChild() and .prepend() to add two new items to the navigation system. You can call them whatever you want.
