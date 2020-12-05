@@ -1,4 +1,4 @@
-const siteContent = {
+const siteContent = { 
   "nav": {
     "nav-item-1": "Services",
     "nav-item-2": "Product",
@@ -36,7 +36,171 @@ const siteContent = {
     "copyright" : "Copyright Great Idea! 2018"
   },
 };
-
+//--------------------------------------------------------------------------------------------
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+// logo.setAttribute('src', siteContent["nav"]["img-src"]) //When given an object bc currently, thats the location
+/*OR*/
+  // logo.setAttribute('src', 'img/logo.png')
+//Notes:
+//if a property is a string with spaces or dashes (like img-src) then you have to use bracket notation 
+//to refer to it. You could do the same thing like this: 
+logo.setAttribute('src', siteContent.nav['img-src'])
+
+
+//Header Section-----------------------------------------------------------------------------
+
+const navLinks = document.querySelectorAll("nav a");
+// console.log(navLinks);
+
+const navLinksArray = Array.from(navLinks);
+// console.log(navLinksArray);
+
+//--------------------------------------------
+  //Task: Add "Services" to nav a 1
+  const navService = document.querySelector('.container nav a');
+  navService.textContent = 'Services';
+  // console.log(navService);
+
+//--------------------------------------------
+  //Task: Add "Product" to nav a 2
+  const navProduct = navService.nextElementSibling;
+  navProduct.textContent = 'Product';
+  // console.log(navProduct);
+
+//--------------------------------------------
+  //Task: Add "Vision" to nav a 3
+  const navVision = navProduct.nextElementSibling;
+  navVision.textContent = 'Vision';
+
+//--------------------------------------------
+  //Task: Add "Features" to nav a 4
+  const navFeatures = navVision.nextElementSibling;
+  navFeatures.textContent = 'Features';
+
+//--------------------------------------------
+  //Task: Add "About" to nav a 5
+  const navAbout = navFeatures.nextElementSibling;
+  navAbout.textContent = 'About';
+
+//--------------------------------------------
+  //Task: Add "Contact" to nav a 6
+  const navContact = navAbout.nextElementSibling;
+  navContact.textContent = 'Contact';
+
+//Section Class cta-------------------------------------------------------------------------
+
+//--------------------------------------------
+  //Task: Add DOM <br> Is <br> Awesome to <h1>
+    // const cta = document.querySelector('.cta')
+    // const ctaH1 = cta.querySelector('h1')
+    // ctaH1.innerText = siteContent.cta.h1.split(' ').join('\n');  //cant use .textContent bc you want to look more specific (.innerText)
+    /*OR*/
+    const header = document.querySelector('.cta h1');
+    header.innerText = siteContent.cta.h1.split(' ').join('\n'); //can't use <br> bc thats a HTML tag
+    //siteContent is where the wanted sentence is located, so your splitting each work into its own string, then join the strings w/ \n inbetween
+    console.log(header);
+
+//--------------------------------------------
+  //Task: Add "Get Started" to Button
+  const getStartedButton = document.querySelector('.cta button');
+  getStartedButton.textContent = 'Get Started';
+  // console.log(getStartedButton);
+  
+//--------------------------------------------
+  //Task: Add img src
+  const circleLogo = document.getElementById("cta-img");
+  circleLogo.setAttribute('src', 'img/header-img.png');
+  circleLogo.alt = 'Circle Image of Code'; //changing the text of the alt property
+  // console.log(circleLogo);
+
+//Section Class main-content---------------------------------------------------------------
+const allH4s = document.querySelectorAll('.main-content h4');
+// console.log(allH4s);
+
+const allH4sArray = Array.from(allH4s);
+// console.log(allH4sArray);
+//----------------------
+const allPs = document.querySelectorAll('.main-content p');
+// console.log(allPs);
+
+const allPsArray = Array.from(allPs);
+// console.log(allPsArray);
+//--------------------------------------------
+  //Task: top-content- h4 + p of Features
+  allH4s[0].textContent = 'Features';
+  allPs[0].textContent = siteContent['main-content']['features-content'];
+
+//--------------------------------------------
+  //Task: top-content- h4 + p of About
+  allH4s[1].textContent = 'About';
+  allPs[1].textContent = siteContent['main-content']['about-content'];
+//--------------------------------------------
+  //Task: img src
+  const codeBox = document.getElementById("middle-img");
+  // codeBox.setAttribute('src', 'img/mid-page-accent.jpg');
+  codeBox.setAttribute('src', siteContent['main-content']['middle-img-src']);
+//--------------------------------------------
+  //Task: bottom-content- h4 + p of Services
+  allH4s[2].textContent = 'Services';
+  allPs[2].textContent = siteContent['main-content']['services-content'];
+
+//--------------------------------------------
+  //Task: bottom-content- h4 + p of Product
+  allH4s[3].textContent = 'Product';
+  allPs[3].textContent = siteContent['main-content']['product-content'];
+
+//--------------------------------------------
+  //Task: bottom-content- h4 + p of Vision
+  allH4s[4].textContent = 'Vision';
+  allPs[4].textContent = siteContent['main-content']['vision-content'];
+
+//Section Class contact-------------------------------------------------------------------
+
+//--------------------------------------------
+  //Task: h4 "Contact"
+  const contact = document.querySelector('.contact h4');
+  contact.textContent = 'Contact';
+
+//--------------------------------------------
+  //Task: p "123 Way 456 Street<br>Somewhere, USA"
+  const streetAddress = contact.nextElementSibling;
+  console.log(streetAddress);
+      //Long Way...
+      // const street = (`${'123 Way 456 Street Somewhere, USA'}`).split(' ');
+      // const addressPt1 = street.slice(0, 4).join(' ');
+      // console.log(addressPt1);
+      // const addressPt2 = street.slice(4, 6).join(' ');
+      // console.log(addressPt2);
+      //   const addressAll = `${addressPt1} ${'\n'} ${addressPt2}`;
+      //   console.log(addressAll);
+      //Short Way...
+      const addressAll = `${'123 Way 456 Street'} ${' \n '} ${'Somewhere, USA'}`;
+      console.log(addressAll);
+  streetAddress.innerText = addressAll;
+//--------------------------------------------
+  //Task: p "1 (888) 888-8888"
+  const phoneNumber = streetAddress.nextElementSibling;
+  phoneNumber.textContent = '1 (888) 888-8888';
+
+//--------------------------------------------
+  //Task: p "sales@greatidea.io"
+  const email = phoneNumber.nextElementSibling;
+  email.textContent = 'sales@greatidea.io';
+
+//Footer-------------------------------------------------------------------------------
+
+  //Task: p "Copyright Great Idea! 2018"
+  const copyRight = document.querySelector('footer p');
+  copyRight.textContent = 'Copyright Great Idea! 2018';
+
+//Additonal-------------------------------------------------------------------------------
+  // Change the color of the navigation text to be green.
+  navService.style.color = 'green';
+  navProduct.style.color = 'green';
+  navVision.style.color = 'green';
+  navFeatures.style.color = 'green';
+  navAbout.style.color = 'green';
+  navContact.style.color = 'green';
+  
+  // Utilize .appendChild() and .prepend() to add two new items to the navigation system. You can call them whatever you want.
